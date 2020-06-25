@@ -15,7 +15,7 @@ interface DetailsParams {
 }
 
 const ActivityDetails: React.FC<RouteComponentProps<DetailsParams>> = ({
-  match,
+  match
 }) => {
   const activityStore = useContext(ActivityStore);
   const {
@@ -28,8 +28,12 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailsParams>> = ({
     loadActivity(match.params.id);
   }, [loadActivity,match.params.id]);
 
-  if (loadingInitial || !activity)
+  if (loadingInitial)
     return <LoadingComponent content="loading activity..." />;
+
+    if (!activity) {
+      return <h2>Not </h2>;
+    }
 
   return (
 
