@@ -1,6 +1,7 @@
 
 using API.Middleware;
 using Application.Activities;
+using Domain;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -42,6 +43,11 @@ namespace API
 
             services.AddControllers()
             .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Create>());
+
+
+            var builder = services.AddIdentityCore<AppUser>();
+
+            //var ident
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

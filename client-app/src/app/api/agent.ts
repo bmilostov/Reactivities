@@ -28,7 +28,7 @@ axios.interceptors.response.use(undefined, (error) => {
     toast.error("server error - check the terminal!!!");
   }
 
-  
+  throw error;
 });
 
 const sleep = (ms: number) => (response: AxiosResponse) =>
