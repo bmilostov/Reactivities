@@ -37,7 +37,7 @@ namespace API.Middleware
 
             switch (ex)
             {
-                case RestExeption re:
+                case RestException re:
                     logger.LogError(ex, "REST ERROR");
                     errors = re.Errors;
                     context.Response.StatusCode = (int)re.Code;

@@ -3,9 +3,9 @@ using System.Net;
 
 namespace Application.Errors
 {
-    public class RestExeption : Exception
+    public class RestException : Exception
     {
-        public RestExeption(HttpStatusCode code, object errors = null)
+        public RestException(HttpStatusCode code, object errors = null)
         {
             Code = code;
             Errors = errors;
